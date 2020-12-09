@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Header from '../../components/pages/landing/Header';
 
 function LandingIndex() {
+
     return (
-        <div>
-            Landing
-        </div>
+        <>
+            <Header />
+        </>
     )
 }
 
