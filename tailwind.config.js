@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    purge: [],
+    purge: ['./src/*.js', './src/*.jsx'],
     presets: [],
     darkMode: false, // or 'media' or 'class'
     theme: {
@@ -17,15 +17,21 @@ module.exports = {
             current: 'currentColor',
 
             background: {
-                default: '#2c3e50',
-                light: '#2c3e50',
-                dark: '#021727'
+                default: '#34495e',
+                light: '#60748b',
+                dark: '#092234'
             },
 
             primary: {
-                default: '#8e44ad',
-                light: '#c073df',
-                dark: '#5d137d'
+                default: '#34ace0',
+                light: '#75deff',
+                dark: '#007dae'
+            },
+
+            secondary: {
+                default: colors.coolGray[200],
+                light: colors.coolGray[50],
+                dark: colors.coolGray[500]
             },
 
             black: colors.black,
@@ -38,6 +44,7 @@ module.exports = {
             indigo: colors.indigo,
             purple: colors.violet,
             pink: colors.pink,
+            teal: colors.teal
         },
         spacing: {
             px: '1px',
@@ -177,8 +184,7 @@ module.exports = {
         },
         fontFamily: {
             sans: [
-                'ui-sans-serif',
-                'system-ui',
+                'Inter',
                 '-apple-system',
                 'BlinkMacSystemFont',
                 '"Segoe UI"',
@@ -192,7 +198,13 @@ module.exports = {
                 '"Segoe UI Symbol"',
                 '"Noto Color Emoji"',
             ],
-            serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+            serif: [
+                'Georgia',
+                'Cambria',
+                '"Times New Roman"',
+                'Times',
+                'serif',
+            ],
             mono: [
                 'ui-monospace',
                 'SFMono-Regular',
@@ -203,7 +215,14 @@ module.exports = {
                 '"Courier New"',
                 'monospace',
             ],
-            title: ['Lora', '"Vesper Libre"']
+            title: ['Lora', '"Vesper Libre"'],
+            headline: [
+                'Inter',
+                'Bitter',
+                'Arvo',
+                'Cutive',
+                '"Scope One"',
+            ]
         },
         fontSize: {
             xs: ['0.75rem', {

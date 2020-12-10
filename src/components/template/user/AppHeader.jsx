@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import NavLink from './NavLink';
+import { useHistory  } from "react-router-dom";
+
+const LOCAL_KEY_AUTH = 'cinemine.auth';
+
 
 export class AppHeader extends Component {
     constructor(props) {
@@ -12,7 +16,10 @@ export class AppHeader extends Component {
 
         this.toggleNavMenu = this.toggleNavMenu.bind(this)
         this.toggleProfileMenu = this.toggleProfileMenu.bind(this)
+        this.onLogout = this.onLogout.bind(this)
+        
     }
+    
 
     toggleNavMenu() {
         this.setState({ navbar_open: !this.state.navbar_open })
@@ -20,6 +27,10 @@ export class AppHeader extends Component {
 
     toggleProfileMenu() {
         this.setState({ profile_open: !this.state.profile_open })
+    }
+
+    onLogout(){
+        localStorage.setItem(LOCAL_KEY_AUTH, JSON.stringify({isAuthenticated: false, isAdmin: false}))
     }
     
 
@@ -79,7 +90,7 @@ export class AppHeader extends Component {
                                 <div className={'origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 ' + (this.state.profile_open ? '':'hidden')} role="menu">
                                     <a href="#pablo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your Profile</a>
                                     <a href="#pablo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
-                                    <a href="#pablo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
+                                    <a href="#pablo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" onClick={this.onLogout}>Sign out</a>
                                 </div>
                             </div>
                         </div>
