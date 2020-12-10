@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/re-bioskop/static/css/main.828f4282.chunk.css",
+    "main.js": "/re-bioskop/static/js/main.f52cdd12.chunk.js",
+    "main.js.map": "/re-bioskop/static/js/main.f52cdd12.chunk.js.map",
+    "runtime-main.js": "/re-bioskop/static/js/runtime-main.ef8af139.js",
+    "runtime-main.js.map": "/re-bioskop/static/js/runtime-main.ef8af139.js.map",
+    "static/js/2.f12ba748.chunk.js": "/re-bioskop/static/js/2.f12ba748.chunk.js",
+    "static/js/2.f12ba748.chunk.js.map": "/re-bioskop/static/js/2.f12ba748.chunk.js.map",
+    "index.html": "/re-bioskop/index.html",
+    "static/css/main.828f4282.chunk.css.map": "/re-bioskop/static/css/main.828f4282.chunk.css.map",
+    "static/js/2.f12ba748.chunk.js.LICENSE.txt": "/re-bioskop/static/js/2.f12ba748.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef8af139.js",
+    "static/js/2.f12ba748.chunk.js",
+    "static/css/main.828f4282.chunk.css",
+    "static/js/main.f52cdd12.chunk.js"
+  ]
+}
