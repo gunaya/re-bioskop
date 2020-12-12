@@ -26,13 +26,13 @@ export default function Login() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-background-dark py-12 px-4 sm:px-6 lg:px-8 font-headline">
+        <div className="min-h-screen flex sm:items-center justify-center bg-background-dark py-12 px-4 sm:px-6 lg:px-8 font-headline">
             <div className="max-w-md w-full space-y-8">
                 <div>
-                    <h1 className="text-3xl tracking-tight font-bold sm:text-4xl md:text-5xl text-center">
+                    <h1 className="text-4xl tracking-tight font-bold sm:text-4xl md:text-5xl text-center mt-20 sm:mt-auto">
                         <span className="block font-title text-primary-default">Cinemine</span>
                     </h1>
-                    <h2 className="mt-6 text-center text-3xl font-extrabold text-secondary-default">
+                    <h2 className=" mt-2 sm:mt-6 text-center text-xl sm:text-3xl font-extrabold text-secondary-default">
                         Sign in to your account
                     </h2>
                 </div>

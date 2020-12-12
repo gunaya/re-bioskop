@@ -12,8 +12,8 @@ function LandingIndex() {
                     </svg>
                     <div className="px-6 pt-8 pb-12 md:max-w-3xl md:mx-auto lg:mx-0 lg:max-w-none lg:pt-0 lg:pb-16">
                         <div className="flex items-center justify-between">
-                            <div className="mt-10">
-                                <h1 className="text-3xl tracking-tight font-bold sm:text-4xl md:text-5xl">
+                            <div className="lg:mt-10 md:mt-7 sm:mt-5">
+                                <h1 className="text-4xl tracking-tight font-bold sm:text-4xl lg:text-6xl">
                                     <span className="block xl:inline font-title text-secondary-light">Cinemine</span>
                                 </h1>
                             </div>
@@ -23,11 +23,11 @@ function LandingIndex() {
                         <p className="text-sm font-semibold text-secondary-dark uppercase tracking-wider">
                             Now created using ReactJS and Tailwind CSS
                         </p>
-                        <h1 className="mt-3 text-3xl font-semibold font-display text-secondary-light sm:mt-6 sm:text-4xl xl:text-5xl">
-                            One Stop Movie Collection,
-                            <br className="hidden sm:inline"/>
+                        <h1 className="mt-3 text-2xl font-semibold font-display text-secondary-light sm:mt-6 sm:text-3xl md:text-3xl xl:text-4xl">
+                            One Stop Movie Collection,&nbsp;
+                            <br className="hidden sm:inline"/> 
                             <span className="text-primary-default">
-                                created for fun.
+                                 created for fun.
                             </span>
                         </h1>
                         <p className="mt-2 text-lg text-secondary-default sm:mt-3 sm:text-xl sm:max-w-xl xl:mt-4 xl:text-2xl xl:max-w-2xl">
@@ -40,7 +40,7 @@ function LandingIndex() {
                         </div>
                     </div>
                     
-                    <div className="px-6 pt-8 sm:pt-12 md:max-w-3xl md:mx-auto lg:mx-0 lg:max-w-full lg:py-0 lg:pt-12">
+                    <div className="mt-2 sm:mt-auto px-6 pt-8 sm:pt-12 md:max-w-3xl md:mx-auto lg:mx-0 lg:max-w-full lg:py-0 lg:pt-12">
                         <p className="text-sm font-semibold text-secondary-default uppercase tracking-wider">Developed by</p>
                         <div className="mt-4 sm:flex">
                             <a href="https://github.com/gunaya" className="flex items-center no-underline">
@@ -55,7 +55,7 @@ function LandingIndex() {
                     </div>
                 </div>
             </div>
-            <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <div className=" mt-3 sm:mt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-background-dark">
                 <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80" alt="" />
             </div>
         </div>
