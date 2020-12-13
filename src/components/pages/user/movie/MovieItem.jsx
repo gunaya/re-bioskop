@@ -14,11 +14,16 @@ export default function MovieItem({movie}) {
         <div className=" w-full md:w-1/4 xl:w-1/5 bg-secondary-default mx-4 md:mx-8 my-4 overflow-hidden rounded-md md:rounded-lg md:mb-10">
             <div className="flex flex-grow md:block">
                 <div className="flex-shrink-0 relative my-auto">
-                    <img className={"  items-center w-36 md:w-full " + (loading ? 'block' : 'hidden')} src={spinner} alt="Man looking at item at a store"/>
-                    <img className={" w-36 md:w-full " + (loading ? 'hidden' : 'block')} src={getMoviePoster(movie.poster_path)} alt="Man looking at item at a store" onLoad={imageLoaded} />
-                    <div className="hidden md:block absolute bottom-0 left-0 w-full pt-6 px-4 pb-4 bg-gradient-to-b from-transparent to-gray-800">
-                        <div className="uppercase tracking-wide text-sm text-secondary-light font-semibold">{movie.title}</div>
-                        <span className="block text-md leading-tight font-medium text-primary-light md:font-normal">{movie.release_date}</span>
+                    <img className={"  items-center w-36 md:w-full " + (loading ? 'block' : 'hidden')} src={spinner} alt={movie.title}/>
+                    <img className={" w-36 md:w-full " + (loading ? 'hidden' : 'block')} src={getMoviePoster(movie.poster_path)} alt={movie.title} onLoad={imageLoaded} />
+                    <div className="hidden md:block absolute bottom-0 left-0 w-full pt-10 px-4 pb-2 bg-gradient-to-b from-transparent to-gray-900">
+                        <div className="relative">
+                            <div className="uppercase tracking-wide text-sm text-secondary-light font-semibold">{movie.title}</div>
+                            <span className="block text-md leading-tight font-medium text-primary-light md:font-normal">{movie.release_date}</span>
+                            <div className="absolute bottom-0 right-0 my-auto">
+                                <div className="uppercase tracking-wide text-sm text-secondary-light font-semibold">{movie.vote_average} <i className="fas fa-star text-yellow-500"></i> </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="p-4 my-auto">

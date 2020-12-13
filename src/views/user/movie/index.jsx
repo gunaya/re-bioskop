@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import ReactPaginate from 'react-paginate'
 import MovieItem from '../../../components/pages/user/movie/MovieItem';
 import axios from 'axios';
+import JenisMovie from '../../../components/pages/user/movie/JenisMovie';
+import MovieFilter from '../../../components/pages/user/movie/MovieFilter';
 
 const BASE_URL = "https://api.themoviedb.org/3";
 const api_key = "84b39d7b03244cbb67ac69e14d03334d";
 const api = axios.create({ baseURL: BASE_URL });
-
-
 
 export default class index extends Component {
     constructor(props) {
@@ -19,27 +19,39 @@ export default class index extends Component {
             perPage: 20,
             currentPage: 0,
             totalItem: 0,
-            totalPerPage: 0
+            totalPerPage: 0,
+            pageNumber: 0,
+            url: '',
+            filter: ''
         }
 
         this.handlePageClick = this.handlePageClick.bind(this)
+        this.onCategoryChange = this.onCategoryChange.bind(this)
+        this.onFiltered = this.onFiltered.bind(this)
     };
 
-    sliceData() {
+    getMovieLists() {
         let curPage = 1;
+        const url = this.state.url
 
         if (this.state.currentPage !== 0) curPage = this.state.currentPage + 1
 
-        api.get('movie/now_playing', { 
+        api.get(`movie/${url}`, { 
             params: { api_key, page:curPage },
         }).then(( {data} ) => {
             const movies = data.results;
 
+            
             const postData = movies.map(movie => {
-                return <MovieItem movie={movie} key={movie.id} />
+                if(movie.title.toLowerCase().includes(this.state.filter.toLowerCase())) return <MovieItem movie={movie} key={movie.id} />
             })
 
+            // const postData = movies.map(movie => {
+            //     return <MovieItem movie={movie} key={movie.id} />
+            // })
+
             this.setState({
+                data: data.results,
                 pageCount: data.total_pages,
                 totalItem: data.total_results,
                 totalPerPage: movies.length,
@@ -58,21 +70,45 @@ export default class index extends Component {
             currentPage: selectedPage,
             offset: offset,
         }, () => {
-            this.sliceData()
+            this.getMovieLists()
         })
 
         window.scrollTo(0, 0)
     };
 
-    componentDidMount() {
-        this.sliceData()
+    onCategoryChange = (item) => {
+        this.setState({
+            url: item,
+            currentPage: 0
+        }, () => {
+            this.getMovieLists()
+        })
+    };
+
+    onFiltered = (filter) => {
+        this.setState({
+            filter : filter
+        }, () => {
+            this.getMovieLists()
+        })
     }
     
     render() {
         return (
-            <div className=" h-full">
-                <div className="container mx-auto mt-5 md:mt-10 mb-auto min-h-screen">
-                    <div className="flex flex-wrap justify-center md:justify-between">
+            <div className=" h-full w-full">
+                <div className="container mx-auto md:mt-10">
+                    <div className="flex flex-col-reverse md:flex-row justify-center md:justify-between">
+                        <div className="w-auto md:w-1/3 lg:w-2/5 mx-4 md:mx-8">
+                            <JenisMovie onCategoryChange={this.onCategoryChange} />
+                        </div>
+                        <div className="w-auto mt-3 md:mt-0 md:w-2/3 lg:w-3/5 mx-4 md:mx-8">
+                            <MovieFilter onFiltered={this.onFiltered} />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container mx-auto mt-5 md:mt-10 mb-auto min-h-screen 2xl:mx-0 2xl:min-w-screen">
+                    <div className="flex flex-wrap justify-center md:justify-start max-w-screen">
                         {this.state.postData}
                     </div>
                 </div>
@@ -86,6 +122,7 @@ export default class index extends Component {
                                 breakLabel={"..."}
                                 breakClassName={"break-me"}
                                 pageCount={this.state.pageCount}
+                                forcePage={this.state.currentPage}
                                 marginPagesDisplayed={0}
                                 pageRangeDisplayed={0}
                                 onPageChange={this.handlePageClick}
@@ -123,6 +160,7 @@ export default class index extends Component {
                                     breakLabel={"..."}
                                     breakClassName={"break-me"}
                                     pageCount={this.state.pageCount}
+                                    forcePage={this.state.currentPage}
                                     marginPagesDisplayed={1}
                                     pageRangeDisplayed={2}
                                     onPageChange={this.handlePageClick}
