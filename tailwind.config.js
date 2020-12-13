@@ -35,7 +35,12 @@ module.exports = {
                 dark: colors.coolGray[500]
             },
 
-            black: colors.black,
+            black: {
+                default: colors.black,
+                vampire: '#070707',
+                smoky: '#0D0D0D'
+            },
+
             white: colors.white,
             gray: colors.coolGray,
             red: colors.red,
