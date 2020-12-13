@@ -14,7 +14,7 @@ export default function MovieItem({movie}) {
     }
 
     return (
-        <div className=" w-full md:w-1/4 xl:w-1/5 bg-secondary-default mx-4 md:mx-8 my-4 overflow-hidden rounded-md md:rounded-lg md:mb-10">
+        <Link to={{ pathname: '/movie/'+movie.id }} className=" w-full md:w-1/4 xl:w-1/5 bg-secondary-default mx-4 md:mx-8 my-4 overflow-hidden rounded-md md:rounded-lg md:mb-10">
             <div className="flex flex-grow md:block">
                 <div className="flex-shrink-0 relative my-auto">
                     <img className={" items-center w-36 md:w-full " + (loading ? 'block' : 'hidden')} src={spinner} alt={movie.title}/>
@@ -53,19 +53,14 @@ export default function MovieItem({movie}) {
                     </div>
                     <hr className="my-2 border-secondary-dark md:hidden" />
                     <p className="md:hidden text-sm text-secondary-dark text-justify mt-4">
-                        {`${movie.overview.substring(0, 90)}...`}
+                        {`${movie.overview.substring(0, 75)}...`}
                     </p>
                     <p className="hidden md:block text-sm text-secondary-dark text-justify">
                         {`${movie.overview.substring(0, 200)}...`}
                     </p>
-
-                    <Link to={{
-                        pathname: '/movie/'+movie.id,
-                        movie: movie
-                    }} > Click for more </Link>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
