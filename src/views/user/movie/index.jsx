@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import ReactPaginate from 'react-paginate'
 import MovieItem from '../../../components/pages/user/movie/MovieItem';
-import axios from 'axios';
 import JenisMovie from '../../../components/pages/user/movie/JenisMovie';
 import MovieFilter from '../../../components/pages/user/movie/MovieFilter';
 
-const BASE_URL = "https://api.themoviedb.org/3";
-const api_key = "84b39d7b03244cbb67ac69e14d03334d";
-const api = axios.create({ baseURL: BASE_URL });
+import movie_api from '../../../services/moviedbapi'
+
+const api_key = process.env.REACT_APP_MOVIEDB_KEY;
 
 export default class index extends Component {
     constructor(props) {
@@ -36,7 +35,7 @@ export default class index extends Component {
 
         if (this.state.currentPage !== 0) curPage = this.state.currentPage + 1
 
-        api.get(`movie/${url}`, { 
+        movie_api.get(`movie/${url}`, { 
             params: { api_key, page:curPage },
         }).then(( {data} ) => {
             const movies = data.results;

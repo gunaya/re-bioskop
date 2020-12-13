@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Moment from 'react-moment';
 import spinner from '../../../../assets/spinner.svg'
+import { Link  } from "react-router-dom";
 
 
 export default function MovieItem({movie}) {
@@ -57,6 +58,11 @@ export default function MovieItem({movie}) {
                     <p className="hidden md:block text-sm text-secondary-dark text-justify">
                         {`${movie.overview.substring(0, 200)}...`}
                     </p>
+
+                    <Link to={{
+                        pathname: '/movie/'+movie.id,
+                        movie: movie
+                    }} > Click for more </Link>
                 </div>
             </div>
         </div>
