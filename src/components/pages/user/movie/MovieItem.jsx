@@ -24,7 +24,7 @@ export default function MovieItem({movie}) {
                             <div className="uppercase tracking-wide text-sm text-secondary-light font-semibold">{movie.title}</div>
                             <span className="block text-md leading-tight font-medium text-primary-light md:font-normal"> 
                                 {/* {moment(movie.release_date).format('DD MMMM YYYY')} */}
-                                <Moment format="DD MMMM YYYY">
+                                <Moment format="DD-MM-YYYY">
                                     {movie.release_date}
                                 </Moment>
                             </span>
@@ -53,7 +53,7 @@ export default function MovieItem({movie}) {
                     </div>
                     <hr className="my-2 border-secondary-dark md:hidden" />
                     <p className="md:hidden text-sm text-secondary-dark text-justify mt-4">
-                        {`${movie.overview.substring(0, 75)}...`}
+                        {`${movie.overview.substring(0, 90)}...`}
                     </p>
                     <p className="hidden md:block text-sm text-secondary-dark text-justify">
                         {`${movie.overview.substring(0, 200)}...`}
