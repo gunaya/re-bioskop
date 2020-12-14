@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/re-bioskop/static/css/main.e3da077c.chunk.css",
-    "main.js": "/re-bioskop/static/js/main.700ca8d7.chunk.js",
-    "main.js.map": "/re-bioskop/static/js/main.700ca8d7.chunk.js.map",
+    "main.js": "/re-bioskop/static/js/main.5a0326d2.chunk.js",
+    "main.js.map": "/re-bioskop/static/js/main.5a0326d2.chunk.js.map",
     "runtime-main.js": "/re-bioskop/static/js/runtime-main.20778ede.js",
     "runtime-main.js.map": "/re-bioskop/static/js/runtime-main.20778ede.js.map",
     "static/css/2.9ff97c3d.chunk.css": "/re-bioskop/static/css/2.9ff97c3d.chunk.css",
-    "static/js/2.11cf9549.chunk.js": "/re-bioskop/static/js/2.11cf9549.chunk.js",
-    "static/js/2.11cf9549.chunk.js.map": "/re-bioskop/static/js/2.11cf9549.chunk.js.map",
+    "static/js/2.91cff198.chunk.js": "/re-bioskop/static/js/2.91cff198.chunk.js",
+    "static/js/2.91cff198.chunk.js.map": "/re-bioskop/static/js/2.91cff198.chunk.js.map",
     "index.html": "/re-bioskop/index.html",
     "static/css/2.9ff97c3d.chunk.css.map": "/re-bioskop/static/css/2.9ff97c3d.chunk.css.map",
     "static/css/main.e3da077c.chunk.css.map": "/re-bioskop/static/css/main.e3da077c.chunk.css.map",
-    "static/js/2.11cf9549.chunk.js.LICENSE.txt": "/re-bioskop/static/js/2.11cf9549.chunk.js.LICENSE.txt",
+    "static/js/2.91cff198.chunk.js.LICENSE.txt": "/re-bioskop/static/js/2.91cff198.chunk.js.LICENSE.txt",
     "static/media/all.min.css": "/re-bioskop/static/media/fa-solid-900.46fdbd2d.woff",
     "static/media/spinner.4f2e1d78.svg": "/re-bioskop/static/media/spinner.4f2e1d78.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.20778ede.js",
     "static/css/2.9ff97c3d.chunk.css",
-    "static/js/2.11cf9549.chunk.js",
+    "static/js/2.91cff198.chunk.js",
     "static/css/main.e3da077c.chunk.css",
-    "static/js/main.700ca8d7.chunk.js"
+    "static/js/main.5a0326d2.chunk.js"
   ]
 }
