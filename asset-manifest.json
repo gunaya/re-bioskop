@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/re-bioskop/static/css/main.e3da077c.chunk.css",
-    "main.js": "/re-bioskop/static/js/main.c573cd48.chunk.js",
-    "main.js.map": "/re-bioskop/static/js/main.c573cd48.chunk.js.map",
+    "main.js": "/re-bioskop/static/js/main.6a7a8958.chunk.js",
+    "main.js.map": "/re-bioskop/static/js/main.6a7a8958.chunk.js.map",
     "runtime-main.js": "/re-bioskop/static/js/runtime-main.20778ede.js",
     "runtime-main.js.map": "/re-bioskop/static/js/runtime-main.20778ede.js.map",
     "static/css/2.9ff97c3d.chunk.css": "/re-bioskop/static/css/2.9ff97c3d.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.9ff97c3d.chunk.css",
     "static/js/2.91cff198.chunk.js",
     "static/css/main.e3da077c.chunk.css",
-    "static/js/main.c573cd48.chunk.js"
+    "static/js/main.6a7a8958.chunk.js"
   ]
 }
