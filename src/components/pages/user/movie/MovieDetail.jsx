@@ -30,7 +30,9 @@ export default function MovieDetail({movie}) {
                             <div className="relative">
                                 <h2 className="text-sm title-font tracking-widest mx-2">{movie.status}  </h2>
                                 <div className="absolute right-0 top-0">
-                                    <h2 className="text-sm font-semibold tracking-widest mx-2"> <Moment format="DD-MM-YYYY"> {movie.release_date} </Moment> </h2>
+                                    <h2 className="text-sm font-semibold tracking-widest mx-2"> 
+                                    {/* <Moment format="DD-MM-YYYY"> {movie.release_date} </Moment> */}{movie.release_date}
+                                    </h2>
                                 </div>
                             </div>
                         </div>
@@ -40,14 +42,17 @@ export default function MovieDetail({movie}) {
                                 <span className="font-bold place-self-center">18+</span>
                             </div>
                         </div>
-                        <div className="flex mb-4">
+                        <blockquote className={"pt-2 text-xl md:text-lg italic text-gray-500 "+(movie.tagline === '' ? 'hidden':'relative')}>
+                            <p className="font-title">{movie.tagline}</p>
+                        </blockquote>
+                        <div className="flex my-4 md:my-8">
                             <span className="flex items-center text-secondary-dark">
                                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => {
                                     return (
                                         <RatingIcon index={index} key={index} rating={movie.vote_average} />
                                     )
                                 })}
-                                <span className="ml-3 text-lg font-semibold text-secondary-default">{movie.vote_average} Reviews</span>
+                                <span className="ml-3 text-base md:text-xl font-semibold text-secondary-default">{movie.vote_average} Reviews</span>
                             </span>
                         </div>
                         <p className="leading-relaxed text-justify"> {movie.overview} </p>
@@ -77,7 +82,7 @@ export default function MovieDetail({movie}) {
                 </div>
 
                 <div className="lg:w-4/5 mx-auto">
-                    <div className="flex mt-2 flex-wrap justify-evenly md:justify-between ">
+                    <div className="flex mt-2 flex-wrap justify-evenly md:justify-start ">
                         {studios.map(studio => {
                             return (
                                 <Studio studio={studio} key={studio.id} />
